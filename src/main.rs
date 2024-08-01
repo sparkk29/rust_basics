@@ -1,27 +1,20 @@
-// use anchor_lang::prelude::*;
+fn main(){
+    let str: &str = "Hello Rust"; // `&str` because it is a string slice. it holds a space in memory
 
-fn main() {
-    // msg!("Hello ");
-    println!("{}", is_even(2));
+    let mut string: String = String::from("Hello Rust"); // type String with cap S. Used `String` class struct to reference a method `from` and type the string value.
+    // This creates a sting object in the heap memory, that has a text "Hello Rust"
+    // this is equivalent to a vector of u8 values. It is a growable, heap-allocated data structure. Kind of like a vector of u8 values. (dynamic size array)
 
-    // let num = 5;
-    // num = 3;      // this will throw an error because num is immutable
-    // you can't assign twice to an immutable variable
+    let slice = &string[0..5]; // slice of 
 
-    // solution
-    let mut num = 5;
+    println!("{}", str);
+    println!("{}", string);
+    println!("{}", slice);
 
-    if is_even(2){
-        num = 7;
-    }
+    string.push_str(" and WebAssembly");
+    println!("{}", string);
 
-    println!("{}", num);
-    
-}
+    string = string.replace("Hello", "Welcome to");
 
-
-pub fn is_even(num: u8) -> bool{
-    let result: u8 = num % 2;
-
-    result == 0 // return bool. semicolon is not needed here for return
+    println!("{}", string);
 }
